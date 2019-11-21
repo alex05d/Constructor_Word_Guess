@@ -4,11 +4,11 @@ var inquirer = require('inquirer');
 var letterArray = "abcdefghijklmnopqrstuvwxyz";
 
 var Pokemon = [
-    Bulbasaur
-"Ivysaur",
+    "Bulbasaur",
+    "Ivysaur",
     "Venusaur",
-    "Charmander"
-"Charmeleon",
+    "Charmander",
+    "Charmeleon",
     "Charizard",
     "Squirtle",
     "Wartortle",
@@ -100,11 +100,22 @@ function theLogic() {
                     computerWord.userGuess(input.userinput);
 
                     computerWord.objArray.forEach(wordCheck);
+                    if (wordCheckArray.join("") === wordComplete.join("")) {
+                        console.log("\nIncorrect|n");
+
+                        incorrectLetters.push(input.userinput);
+                        guessesLeft--;
+                    } else {
+                        console.log("\nCottect|n");
+
+                        correctLetters.push(input.userinput);
+                    }
+                    computerWord();
                 }
             }
         });
     } else {
         console.log("You Win!\n")
     }
-
+    function com
 }
