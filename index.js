@@ -111,11 +111,50 @@ function theLogic() {
                         correctLetters.push(input.userinput);
                     }
                     computerWord();
+
+                    console.log("Guesses Left: " + guessesLeft + "\n");
+                    console.log("Letter Guessed: " + incorrectLetters.join(" ") + "\n");
+
+                    if (guessesLeft > 0) {
+                        theLogic();
+                    } else {
+                        console.log("You have Lost!\n");
+                    }
+                    function wordCheck(key) {
+                        wordCheckArray.push(key.guessed);
+                    }
                 }
             }
         });
     } else {
         console.log("You Win!\n")
     }
-    function com
+    function completecCheck(key) {
+        wordComplete.push(key.guessed);
+    }
 }
+
+function restartGame() {
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: " Would you  like to: ",
+                choices: ["play again", " exit"],
+                name: "restart"
+            }
+        ])
+        .then(function (input) {
+            if (input.restart === "play again") {
+                requiredNewWord = true;
+                incorrectLetters = [];
+                correctLetters = [];
+                guessesLeft = 10;
+                theLogic();
+            } else {
+                return;
+            }
+        });
+}
+
+theLogic();
