@@ -1,0 +1,22 @@
+{
+  "name": "constructor_word_guess",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex05d/Constructor_Word_Guess.git"
+  },
+  "author": "Alexiss Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alex05d/Constructor_Word_Guess/issues"
+  },
+  "homepage": "https://github.com/alex05d/Constructor_Word_Guess#readme",
+  "dependencies": {
+    "inquirer": "^7.0.0"
+  }
+}
